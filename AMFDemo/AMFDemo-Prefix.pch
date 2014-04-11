@@ -1,0 +1,49 @@
+//
+// Prefix header for all source files of the 'AMFDemo' target in the 'AMFDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+
+// HTTP Request Enum
+typedef enum
+{
+    kGET = 0,
+    kPOST,
+    kPUT,
+    kDELETE
+    
+}HttpHeaderType;
+
+typedef enum
+{
+    kPostSyncRequest=0
+    
+}RequestType;
+
+// OperationID Enum
+typedef enum
+{
+    Add = 0,
+    Update,
+    Delete
+    
+}OperationType;
+
+
+// Server URL
+#define kServerURL @"http://oshirase.nttdatamobile.com:8090/sqliteSyncWs-1/rest/v1/Employees/"
+
+
+// Create Table Query
+#define CREATE_TABLE @"create table Employee( empId integer primary key , empFName text not null , empLName text not null , empDailyRate integer , empPaidAmount integer , empBalance integer ,syncStatus integer , operationId integer);"
